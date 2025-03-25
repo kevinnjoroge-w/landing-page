@@ -3,6 +3,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Le Santos School</title>
+    <style>
+   body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        background-image: url(image.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+      
+      /* Add this pseudo-element for the overlay */
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.6); /* 40% visible = 60% white overlay */
+        z-index: -1;
+      }
+      header {
+        background-color: #333;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        margin: 0 1rem;
+        cursor: pointer;
+      }
+      nav ul li:hover {
+        text-decoration: underline;
+      }
+      .about-us {
+        padding: 1rem;
+      }
+      .about-us h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .about-us article {
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+      .about-us ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .about-us ul li {
+        margin-bottom: 1rem;
+      }
+    </style>
   </head>
   <header>
     <nav>
