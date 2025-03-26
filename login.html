@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Cruise app Login/Signup</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+   
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+
+        loginForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+
+          fetch('/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password })
+          })
+          .then(response => response.json())
+          .then(data => {
+            alert(data.message);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+        });
+
+        signupForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+          const newUsername = document.getElementById('new-username').value;
+          const newPassword = document.getElementById('new-password').value;
+
+          fetch('/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username: newUsername, password: newPassword })
+          })
+          .then(response => response.json())
+          .then(data => {
+            alert(data.message);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+			
+          });
+        });
+	
+      });
+	</script>
+	  <style media="screen">
+      body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+.main{
+	width: 350px;
+	height: 500px;
+	background: red;
+	overflow: hidden;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+#chk{
+	display: none;
+}
+.signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+label{
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 50px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+input{
+	width: 60%;
+	height: 10px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 12px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 30px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+button:hover{
+	background: #6d44b8;
+}
+.login{
+	height: 460px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.login label{
+	color: #573b8a;
+	transform: scale(.6);
+}
+
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+}
+.footer{
+    border: #000;
+	border: radius 13px;
+	padding: 10px;
+	margin-left:10%;
+
+}
+.hover-link {
+    color: blue; /* Default text color */
+    text-decoration: none; /* Remove underline */
+    transition: all 0.3s ease; /* Smooth transition for effects */
+	flex-direction: column;
+}
+
+/* Hover effect */
+.hover-link:hover {
+    color: rgb(3, 255, 158); /* Change text color on hover */
+    text-decoration: underline; /* Add underline on hover */
+    background-color: #ac7704; /* Change background color on hover */
+    padding: 5px; /* Add padding on hover */
+    border-radius: 5px; /* Rounded corners */
+	transform: scale(1.1); /* Scale up the link */
+}
+</style>
+
+</head>
+<body>
+			<div class="main">  	
+				<input type="checkbox" id="chk" aria-hidden="true">
+		
+					<div class="signup">
+						<form>
+							<label for="chk" aria-hidden="true">Sign up</label>
+							<input type="text" name="txt" placeholder="User name" required="">
+							<input type="email" name="email" placeholder="Email" required="">
+				  <input type="number" name="broj" placeholder="BrojTelefona" required="">
+							<input type="password" name="pswd" placeholder="Password" required="">
+							<button type="submit">Sign up</button>
+						</form>
+					</div>
+		
+					<div class="login">
+						<form>
+							<label for="chk" aria-hidden="true">Login</label>
+							<input type="email" name="email" placeholder="Email" required="">
+							<input type="password" name="pswd" placeholder="Password" required="">
+							<button type="submit">Login</button>
+						</form>
+					</div>
+			</div>
+	</body>
+	<div class="footer"><footer>
+		<div class="social-media">
+			<p>&copy; 2025 Cruise App. All rights reserved.</p>
+			<a href="https://facebook.com" target="_blank"rel="norefferrer noopener" class="hover-link">Facebook</a>
+			<a href="https://twitter.com" target="_blank"rel="norefferrer noopener" class="hover-link">Twitter</a>
+			<a href="https://instagram.com"target="_blank" rel="norefferrer noopener"class="hover-link">Instagram</a>
+		  </div>
+	</footer>
+	</div>
+	
+</html>

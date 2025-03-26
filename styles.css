@@ -1,0 +1,338 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Root Variables for Consistent Theming */
+:root {
+  --primary-color: #2e3192; /* School blue */
+  --secondary-color: #f8b132; /* School gold/yellow */
+  --accent-color: #4caf50; /* Green for growth/education */
+  --text-color: #333;
+  --light-color: #fff;
+  --light-bg: #f5f5f5;
+  --dark-bg: #222;
+  --gradient-bg: linear-gradient(135deg, var(--primary-color), #1a1a60);
+  --font-family: 'Montserrat', sans-serif;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html, body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  line-height: 1.7;
+  scroll-behavior: smooth;
+  background-color: var(--light-bg);
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h1 u {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+h1 u::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background: var(--secondary-color);
+  bottom: -10px;
+  left: 0;
+}
+
+article {
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Header and Navigation */
+header {
+  background: var(--gradient-bg);
+  box-shadow: var(--shadow);
+  width: 100%;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 1200px;
+}
+
+nav ul li {
+  color: var(--light-color);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+  color: var(--dark-bg);
+}
+
+/* Main Sections */
+body {
+  padding-top: 12rem; /* Space for fixed header with many menu items */
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--light-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+/* About Us Section - handling both possible class names */
+.about-us, section[class="about us"] {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-us h1, section[class="about us"] h1 {
+  color: var(--primary-color);
+}
+
+.about-us article, section[class="about us"] article {
+  line-height: 1.8;
+}
+
+.about-us ul, section[class="about us"] ul {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-us ul li, section[class="about us"] ul li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.about-us ul li::before, section[class="about us"] ul li::before {
+  content: "✓";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+}
+
+/* Style for the motto to make it stand out */
+.about-us h1:nth-of-type(3) + article, section[class="about us"] h1:nth-of-type(3) + article {
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--primary-color);
+  padding: 1.5rem;
+  background-color: rgba(46, 49, 146, 0.05);
+  border-left: 4px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+
+/* Style for school history */
+.about-us h1:last-of-type + article, section[class="about us"] h1:last-of-type + article {
+  padding: 1.5rem;
+  background-color: rgba(76, 175, 80, 0.05);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--accent-color);
+}
+.slideshow-container {
+  max-width: 100%;
+  height: clamp(200px, 50vw, 400px);
+  position: relative;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.mySlides {
+  display: none; /* Change from opacity to display */
+  width: 100%;
+  height: 100%;
+}
+
+.mySlides.active {
+  display: block; /* Show active slide */
+}
+
+.mySlides img {
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Fade animation */
+.fade {
+  animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  transition: 0.6s ease;
+  z-index: 2;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dot-container {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  nav ul {
+    gap: 0.5rem;
+  }
+  
+  nav ul li {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    position: relative;
+  }
+  
+  body {
+    padding-top: 0;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  section {
+    padding: 1rem;
+  }
+  
+  /* Mobile Navigation Toggle */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--light-color);
+    margin-bottom: 5px;
+    transition: var(--transition);
+  }
+}
