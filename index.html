@@ -4,68 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Le Santos School</title>
-    <style>
-   body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-        background-image: url(image.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: relative;
-      }
-      
-      /* Add this pseudo-element for the overlay */
-      body::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.6); /* 40% visible = 60% white overlay */
-        z-index: -1;
-      }
-      header {
-        background-color: #333;
-        color: white;
-        padding: 1rem;
-        text-align: center;
-      }
-      nav ul {
-        list-style-type: none;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-      }
-      nav ul li {
-        margin: 0 1rem;
-        cursor: pointer;
-      }
-      nav ul li:hover {
-        text-decoration: underline;
-      }
-      .about-us {
-        padding: 1rem;
-      }
-      .about-us h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-      .about-us article {
-        font-size: 1.2rem;
-        line-height: 1.5;
-      }
-      .about-us ul {
-        list-style-type: none;
-        padding: 0;
-      }
-      .about-us ul li {
-        margin-bottom: 1rem;
-      }
-    </style>
-  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -89,115 +28,89 @@
                 <li><a href="#">E-Pay</a></li>
                 <li><a href="#">Campuses</a></li>
                 <li><a href="#">Info</a></li>
-                <li><a href="#">Contact</a></li>
-                <li ><label>
-                    <button class="login">
-                      <a href="login.html">Login/Sign up</a>
-                    </button></label></li>
+                <li><a href="login.html">Login/Sign up</a></li>
             </ul>
         </nav>
     </header>
-
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-          <img src="assests /three-students-working-flatlay.jpgg" alt="Students" style="width:100%">
+    <main>
+        <section>
+            <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="assets/three-students-working-flatlay.jpg" alt="Students" />
+            </div>
+            <div class="mySlides fade">
+                <img src="assets/university-students-walking-outside-on-campus.jpg" alt="Campus" />
+            </div>
+            <div class="mySlides fade">
+                <img src="assets/360_F_836504484_H4zGvqIKBDOZIs1npbPdBqGQlmJFdh9F.jpg" alt="Study Group" />
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-
-        <div class="mySlides fade">
-          <img src="assests /university-students-walking-outside-on-campus.jpg" alt="Campus" style="width:100%">
-        </div>
-
-        <div class="mySlides fade">
-          <img src="assests /360_F_836504484_H4zGvqIKBDOZIs1npbPdBqGQlmJFdh9F.jpg" alt="Study Group" style="width:100%">
-        </div>
-
-        <!-- Navigation arrows -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-
-      <!-- Navigation dots -->
-      <div class="dot-container">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-    <section class="hero">
-        <h1>Welcome to Le Santos School</h1>
-        <p>Empowering students to become compassionate leaders and lifelong learners.</p>
-        <button>Learn More</button>
-    </section>
-
-    <!-- About Us Section -->
-    <section class="about-us">
-        <h1><u>Our Mission</u></h1>
-        <article>At Le Santos School, our mission is to provide a holistic education that nurtures the intellectual, emotional, 
-        and social growth of our students. We strive to create a supportive community that encourages creativity, critical 
-        thinking, and collaboration, preparing our students to make a positive impact in the world.</article>
-
-        <h1><u>Our Vision</u></h1>
-        <article>To be a premier educational institution that fosters a culture of excellence, innovation, and inclusivity, 
-        empowering students to become compassionate leaders and lifelong learners.</article>
-
-        <h1><u>Our Motto</u></h1>
-        <article>"Learn with Passion, Lead with Purpose"</article>
-
-        <h1><u>Our Core Values</u></h1>
-        <ul>
-            <li>Excellence: Striving for the highest standards in all endeavors.</li>
-            <li>Inclusivity: Embracing diversity and fostering a sense of belonging among all members of the school community.</li>            
-            <li>Creativity: Encouraging innovation and imagination in learning and problem-solving.</li>               
-            <li>Compassion: Cultivating empathy and kindness towards others.</li>             
-            <li>Integrity: Upholding honesty, responsibility, and moral principles in all actions.</li>
-        </ul>
-    </section>
-
-    <!-- Academics Section -->
-    <section class="academics">
-        <h1>Academic Excellence</h1>
-        <article>At LSS, we value academics as it provides a foundation for lifelong learning and success. Our programs are designed to foster critical thinking, creativity, and collaboration.</article>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="cta">
-        <h2>Ready to Join Our Community?</h2>
-        <button>Apply Now</button>
-        <button>Request Information</button>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <h2>What Our Students Say</h2>
-        <blockquote>
-            "Le Santos School has been instrumental in my personal and academic growth."
-        </blockquote>
-        <cite>Grace , Class of 2022</cite>
-
-        <blockquote>
-          "The school provided my with fundamental knowledge that we useful later in life"
-        </blockquote>
-        <cite>Richardo , class of 2018</cite>
-    </section>
-
-    <!-- News and Events Section -->
-    <section class="news-events">
-        <h2>Upcoming Events</h2>
-        <ul>
-            <li>Open House: March 15, 2025</li>
-            <li>Science Fair: April 10, 2025</li>
-        </ul>
-    </section>
-
-    <!-- Contact Information Section -->
-    <section class="contact-info">
-        <h2>Get in Touch</h2>
-        <p>Phone: 254-1142-63750</p>
-        <p>Email: <a href="mailto:info@lesantosschool.com">info@lesantosschool.com</a></p>
-        <p>Address: 123 ,Chuka, Kenya</p>
-    </section>
-
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div></section>
+        
+        <section class="hero">
+            <h1>Welcome to Le Santos School</h1>
+            <p>Empowering students to become compassionate leaders and lifelong learners.</p>
+            <button>Learn More</button>
+        </section>
+        <section class="about-us">
+            <h1><u>Our Mission</u></h1>
+            <article>At Le Santos School, our mission is to provide a holistic education that nurtures the intellectual, emotional, and social growth of our students. We strive to create a supportive community that encourages creativity, critical thinking, and collaboration, preparing our students to make a positive impact in the world.</article>
+            <h1><u>Our Vision</u></h1>
+            <article>To be a premier educational institution that fosters a culture of excellence, innovation, and inclusivity, empowering students to become compassionate leaders and lifelong learners.</article>
+            <h1><u>Our Motto</u></h1>
+            <article>"Learn with Passion, Lead with Purpose"</article>
+            <h1><u>Our Core Values</u></h1>
+            <ul>
+                <li>Excellence: Striving for the highest standards in all endeavors.</li>
+                <li>Inclusivity: Embracing diversity and fostering a sense of belonging among all members of the school community.</li>
+                <li>Creativity: Encouraging innovation and imagination in learning and problem-solving.</li>
+                <li>Compassion: Cultivating empathy and kindness towards others.</li>
+                <li>Integrity: Upholding honesty, responsibility, and moral principles in all actions.</li>
+            </ul>
+        </section>
+        <section class="academics">
+            <h1>Academic Excellence</h1>
+            <article>At LSS, we value academics as it provides a foundation for lifelong learning and success. Our programs are designed to foster critical thinking, creativity, and collaboration.</article>
+        </section>
+        <section class="cta">
+            <h2>Ready to Join Our Community?</h2>
+            <button>Apply Now</button>
+            <button>Request Information</button>
+        </section>
+        <section class="testimonials">
+            <h2>What Our Students Say</h2>
+            <blockquote>
+                "Le Santos School has been instrumental in my personal and academic growth."
+            </blockquote>
+            <cite>Grace, Class of 2022</cite>
+            <blockquote>
+                "The school provided me with fundamental knowledge that was useful later in life."
+            </blockquote>
+            <cite>Richardo, Class of 2018</cite>
+        </section>
+        <section class="news-events">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li>Open House: March 15, 2025</li>
+                <li>Science Fair: April 10, 2025</li>
+            </ul>
+        </section>
+        <section class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Phone: 254-1142-63750</p>
+            <p>Email: <a href="mailto:info@lesantosschool.com">info@lesantosschool.com</a></p>
+            <p>Address: 123, Chuka, Kenya</p>
+        </section>
+    </main>
     <footer>
         &copy; 2025 Le Santos School. All rights reserved.
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
